@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'com.huawei.agconnect'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.daozhao.hello'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.daozhao.hello"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            // 根据您实际的签名信息，替换以下参数中的xxxx
+            keyAlias 'key0'
+            keyPassword 'Ohmylady3'
+            storeFile file('hellodaozhao.jks')
+            storePassword 'Ohmylady3'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'com.google.firebase:firebase-installations-ktx:17.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // HMS Push kit
+    implementation 'com.huawei.hms:push:6.3.0.302'
+    // HMS Core SDK
+    implementation 'com.huawei.hms:hmscoreinstaller:6.6.0.300'
+    implementation 'com.huawei.hms:hwid:6.9.0.301'
+    // hutool
+    implementation 'cn.hutool:hutool-all:5.8.11'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okio:okio:3.3.0'
+}

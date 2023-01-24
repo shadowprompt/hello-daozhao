@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "197845115065",
+    "project_id": "daozhao-com",
+    "storage_bucket": "daozhao-com.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197845115065:android:67defb2207abab95e3bb68",
+        "android_client_info": {
+          "package_name": "com.daozhao.hello"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197845115065-l95q4mcnlif37dbvmc4or4fji7okd89v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7ZTKnxqV5YigxyD11wtLvzQBqjS6mei0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197845115065-l95q4mcnlif37dbvmc4or4fji7okd89v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "197845115065-85d8r3k56813gduk1a9ljobp1mtg2vhg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.raycast"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
