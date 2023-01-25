@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import cn.hutool.http.HttpUtil
 import com.daozhao.hello.R
 import com.daozhao.hello.databinding.FragmentDashboardBinding
 import com.google.firebase.installations.FirebaseInstallations
@@ -143,10 +144,18 @@ class DashboardFragment : Fragment() {
                 if (it.isComplete) {
                     var uuid = it.result.toString();
                     showLog("uuid complete " + uuid);
-//                    val paramMap: HashMap<String, Any> = HashMap()
-//                    paramMap["id"] = uuid;
-//                    paramMap["pushToken"] = token.toString();
-//                    val result = HttpUtil.post("https://www.baidu.com", paramMap);
+                    val paramMap: HashMap<String, Any> = HashMap()
+                    paramMap["id"] = uuid;
+                    paramMap["pushToken"] = token.toString();
+//                    val result = HttpUtil.post("https://gateway.daozhao.com.cn/HMS/storePushToken", paramMap);
+//                    showLog("post result " + result)
+
+                    object : Thread() {
+                        override fun run() {
+                            Thread.sleep(3000)
+                            println("A 使用 Thread 对象表达式: ${Thread.currentThread()}")
+                        }
+                    }.start()
 
                     val client = OkHttpClient.Builder().build()
 

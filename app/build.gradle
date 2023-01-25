@@ -25,7 +25,7 @@ android {
             // 根据您实际的签名信息，替换以下参数中的xxxx
             keyAlias 'key0'
             keyPassword 'Ohmylady3'
-            storeFile file('hellodaozhao.jks')
+            storeFile file('hmspush_daozhao.jks')
             storePassword 'Ohmylady3'
         }
     }
